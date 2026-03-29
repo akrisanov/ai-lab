@@ -1,0 +1,12 @@
+[project]
+name = "ch02"
+version = "0.1.0"
+description = "Executing prompts programmatically"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyter>=1.1.1",
+    "langchain>=1.2.13",
+    "langchain-openai>=1.1.12",
+    "openai>=2.30.0",
+]
