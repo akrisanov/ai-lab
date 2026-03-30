@@ -1,5 +1,9 @@
+from research_engine_lcel import question, web_research_chain
+
+
 def main():
-    print("Hello from ch04!")
+    web_research_report = web_research_chain.invoke(question)
+    print(web_research_report)
 
 
 if __name__ == "__main__":

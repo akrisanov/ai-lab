@@ -1,6 +1,6 @@
 from web_searching import web_search
 from web_scraping import web_scrape
-from llm_modes import get_llm
+from llm_models import get_llm
 from utils import to_obj
 
 from prompts import (
