@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: loadgen
+  namespace: demo
+spec:
+  restartPolicy: Always
+  containers:
+    - name: loadgen
+      image: curlimages/curl:8.10.1
+      command:
+        - sh
+        - -lc
+        - |
+          while true; do
+            out=$(curl -w ' client_latency_ms=%{time_total}' -sS -m 5 \
+            http://infer.demo.svc.cluster.local/infer || echo "err")
+            echo "$out"
+            sleep 0.2
+          done

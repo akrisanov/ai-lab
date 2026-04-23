@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: infer-app
+  namespace: demo
+data:
+  app.py: |
+    from flask import Flask
+    import time
+
+    app = Flask(__name__)
+    counter = 0
+
+    @app.route('/infer')
+    def infer():
+        global counter
+        time.sleep(0.018)
+        counter += 1
+        latency = 17.5 + (hash(str(counter)) % 3)
+        return f'ok latency_ms={latency:.2f}'
+
+    @app.route('/metrics')
+    def metrics():
+        return f'infer_requests_total {counter}'
+
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=80)
