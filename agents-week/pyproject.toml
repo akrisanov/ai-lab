@@ -1,0 +1,19 @@
+[project]
+name = "01"
+version = "0.1.0"
+description = "Agents Week"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "accelerate>=1.13.0",
+    "huggingface-hub>=1.13.0",
+    "openai>=2.33.0",
+    "sentencepiece>=0.2.1",
+    "transformers>=5.7.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+]
