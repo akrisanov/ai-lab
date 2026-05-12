@@ -1,5 +1,7 @@
 {
-  "name": "Andrey",
+  "name": "Ivan Ivanov",
+  "passport": "4506 123456",
+  "seat_preference": "window",
   "meal_preference": "vegetarian",
-  "seat_preference": "window"
+  "email": "ivan.ivanov@example.com"
 }
